@@ -1,0 +1,90 @@
+.Bidding {
+    margin-top: 50px;
+  }
+  
+  .Bidding h2 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .Bidding p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .Bidding Form {
+    margin-top: 20px;
+  }
+  
+  .Bidding Button {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .BuyNft {
+    margin-top: 50px;
+  }
+  
+  .BuyNft h2 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .BuyNft Table {
+    margin-top: 20px;
+  }
+  
+  .BuyNft Button {
+    margin-right: 10px;
+  }
+
+
+  .CancelListAuction {
+    margin-top: 50px;
+  }
+  
+  .CancelListAuction h2 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .CancelListAuction Table {
+    margin-top: 20px;
+  }
+  
+  .CancelListAuction Button {
+    margin-right: 10px;
+  }
+
+  .FinalizeAuction {
+    margin-top: 50px;
+  }
+  
+  .FinalizeAuction h2 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .FinalizeAuction Form {
+    margin-top: 20px;
+  }
+  
+  .FinalizeAuction Button {
+    margin-top: 10px;
+  }
+  .ListNFT {
+    margin-top: 50px;
+  }
+  
+  .ListNFT h2 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .ListNFT Table {
+    margin-top: 20px;
+  }
+  
+  .ListNFT Button {
+    margin-top: 10px;
+  }
