@@ -19,15 +19,17 @@ function Auction() {
               const providers = new ethers.providers.Web3Provider(window.ethereum);
               const signer = providers.getSigner();
               const contract = new ethers.Contract(data, Abi, signer);
-              const sendTX = await contract.finalizAuction(Id);
+              const sendTX = await contract.finalizeAuction(Id);
               // await sendTX.wait()
               console.log(sendTX)
               const check = sendTX.toString()
               console.log(check)
+              setStatus("successfully completed")
               // setStatus(check)
       }
       catch (error) {
           console.log(error)
+          setStatus("Something went wrong")
       }
     }    
   }

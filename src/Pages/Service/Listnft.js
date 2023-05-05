@@ -28,10 +28,12 @@ function Auction() {
               console.log(sendTX)
               const check = sendTX.toString()
               console.log(check)
+              setStatus("sucessfully completed")
               // setStatus(check)
       }
       catch (error) {
           console.log(error)
+          setStatus("Something went wrong")
       }
     }    
   }

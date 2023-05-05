@@ -12,6 +12,7 @@ function CollectionApi() {
     axios
       .get(url)
       .then((item) => {
+        
       
         if (item.data.assets.length === 0) {
           console.log("data is Null");

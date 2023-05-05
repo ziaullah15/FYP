@@ -32,7 +32,7 @@ function Welcome() {
       }
     } else {
       setErrorMessage("Install MetaMask");
-    }
+    } 
   };
 
   const accountsChanged = async (newAccount) => {

@@ -15,7 +15,7 @@ import CLA from "./Pages/Service/CLA";
 import FinalizeAuction from "./Pages/Service/FinalizeAuction";
 import Listnft from "./Pages/Service/Listnft";
 import Transection from "./Pages/Transection/Transection";
-import Login from "./Pages/Login/Login";
+// import Login from "./Pages/Login/Login";
 import Footer from "./components/Footer"
 
 
@@ -36,7 +36,7 @@ function App() {
         <Route path="/finalauction" element={<FinalizeAuction></FinalizeAuction>} ></Route>
         <Route path="/listnft" element={<Listnft></Listnft>} ></Route>
         <Route path="/transection" element={<Transection></Transection>} ></Route>
-        <Route path="/login" element={<Login></Login>} ></Route>
+        {/* <Route path="/login" element={<Login></Login>} ></Route> */}
         
 
      </Routes>

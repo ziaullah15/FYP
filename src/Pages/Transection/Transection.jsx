@@ -1,64 +1,60 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Table } from 'react-bootstrap';
-import { ethers } from 'ethers';
-import Abi from "../../components/Contract/contractABI.json"
-
-
+import axios from 'axios';
 
 function Transection() {
 
-  const [transactions, setTransactions] = useState([]);
-  const contractAddress = "0xD9D9AbDC7270b946c9f4112d9B927fa3Dd8E2A87";
+  const [data, setData] = useState([]);
+  const [err, setErr] = useState("");
+
   useEffect(() => {
-   
-    const abi = Abi;
-    const provider = new ethers.providers.InfuraProvider('ropsten', 'your_infura_project_id'); // zia use your ropsten or infura as you want
-    const contract = new ethers.Contract(contractAddress, abi, provider);
-
-    const getTransactions = async () => {
-      const blockNumber = await provider.getBlockNumber();
-      const events = await contract.queryFilter('Transfer', blockNumber - 10000, blockNumber);
-      const txs = events.map((event) => {
-        const { blockNumber, transactionHash, args } = event;
-        return { blockNumber, transactionHash, from: args[0], to: args[1], value: args[2] };
+    axios.get("https://api-testnet.bscscan.com/api?module=account&action=txlist&address=0x055DD0C93b5ea880d7a30CD21Ce3E75558592781&startblock=0&endblock=99999999&sort=asc&apikey=HMQTPNNEXRIN1SJQ69BKH87M3T8G1W7M6K")
+      .then((response) => {
+        console.log(response)
+        if (response.data.result.length === 0) {
+          console.log("Data is Null");
+          setErr("This Account Has No NFTs");
+        } else {
+          console.log(response.data.result);
+          console.log("Data Received");
+          setData(response.data.result);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
       });
-      setTransactions(txs);
-    };
-
-    getTransactions();
-  }, [contractAddress]);
+  },[]);
 
   return (
-    <>
-    
-    <Container className="TransactionSection margin_top">
-      <h2>Transactions</h2>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Block Number</th>
-            <th>Transaction Hash</th>
-            <th>From</th>
-            <th>To</th>
-            <th>Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {transactions.map((tx) => (
-            <tr key={tx.transactionHash}>
-              <td>{tx.blockNumber}</td>
-              <td>{tx.transactionHash}</td>
-              <td>{tx.from}</td>
-              <td>{tx.to}</td>
-              <td>{ethers.utils.formatEther(tx.value)}</td>
+    <div style={{ overflowX: 'auto' }}>
+      <Container className="TransactionSection margin_top ">
+        <h2 className='text-center'>Transactions</h2>
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Block Number</th>
+              <th>Transaction Hash</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Value</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
-    </Container>
-      
-    </>
+          </thead>
+          <tbody>
+            {data.map((tx) => (
+              <tr key={tx.hash}>
+                <td>{tx.blockNumber}</td>
+                <td>{tx.hash}</td>
+                <td>{tx.from}</td>
+                <td>{tx.to}</td>
+                <td>{tx.value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+        <p>{err}</p>
+      </Container>
+    </div>
   )
 }
 
-export default Transection
+export default Transection;

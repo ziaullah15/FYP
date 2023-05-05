@@ -29,9 +29,11 @@ function Auction() {
               const check = sendTX.toString()
               console.log(check)
               // setStatus(check)
+              setStatus("Sucessfully Completed")
       }
       catch (error) {
           console.log(error)
+          setStatus("something went wrong")
       }
     }    
   }
@@ -94,7 +96,7 @@ function Auction() {
           <Form.Label>Enter Duration (Time)</Form.Label>
           <Form.Control type="number" value={duration} onChange={durationFunction} />
         </Form.Group>
-        <Button className='my-2' variant="primary" onClick={auction}>Place Bid</Button>
+        <Button className='my-2' variant="primary" onClick={auction}>Auctionate</Button>
         <p className='text-center'>{status}</p>
       </Form>
     </Container>

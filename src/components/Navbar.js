@@ -8,7 +8,7 @@ function Navbar() {
       <header id="header" className="fixed-top">
         <div className="container d-flex align-items-center">
 
-          <h1 className="logo me-auto"><a href="index.html">NFT Minting App</a></h1>
+          <h1 className="logo me-auto"><a href="index.html">NFT Marketplace</a></h1>
           {/* <!-- Uncomment below if you prefer to use an image logo --> */}
           {/* <!-- <a href="index.html" className="logo me-auto"><img src="assets/img/logo.png" alt="" className="img-fluid"></a>--> */}
 
@@ -52,14 +52,14 @@ function Navbar() {
                 </div>
               </li>
               <li>
-              <Link to={"/transaction"}>Transection</Link>
+              <Link to={"/transection"}>Transection</Link>
               </li>
             </ul>
             <i className="bi bi-list mobile-nav-toggle"></i>
           </nav>
           {/* !-- .navbar --> */}
 
-          <Link to={"/login"} className="get-started-btn">Login</Link>
+          {/* <Link to={"/login"} className="get-started-btn">Login</Link> */}
 
         </div>
       </header>
