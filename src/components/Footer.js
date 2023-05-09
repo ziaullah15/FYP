@@ -2,20 +2,10 @@ import React from 'react';
 
 function Footer() {
   return (
-    <>
-
-<footer className="text-center text-white bg-dark bottom-0 w-100" >
-  {/* <!-- Copyright --> */}
-  <div className="text-center text-white p-3" >
-    © 2023 Copyright:
-    <span> Zia Ullah & Team</span>   
-     {/* <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a> */}
-  </div>
-  {/* <!-- Copyright --> */}
-</footer>
-    </>
-
-  )
+    <footer className="text-center text-white bg-dark p-3" style={{ position: "fixed", bottom: 0, left: 0, right: 0 }}>
+      © 2023 Zia Ullah & Team
+    </footer>
+  );
 };
 
 export default Footer;

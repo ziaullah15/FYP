@@ -17,9 +17,6 @@ function Navbar() {
               <li>
                 <Link to={"/"}>Home</Link>
               </li>
-              <li>
-                <Link to={"/news"}>Your NFT</Link>
-              </li>
               <li >
                 <div className="dropdown">
                   <Link to={"/"}>Services</Link>
@@ -52,7 +49,7 @@ function Navbar() {
                 </div>
               </li>
               <li>
-              <Link to={"/transection"}>Transection</Link>
+              <Link to={"/transection"}>Transaction</Link>
               </li>
             </ul>
             <i className="bi bi-list mobile-nav-toggle"></i>

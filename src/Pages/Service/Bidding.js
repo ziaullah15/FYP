@@ -113,12 +113,12 @@ import Abi from "../../components/Contract/contractABI.json";
 import { Container, Button, Form } from "react-bootstrap";
 import { ethers } from "ethers";
 
-function Auction() {
+function Bidding() {
   const [Id, setId] = useState(0);
   const [price, setPrice] = useState(0);
   const [status, setStatus] = useState("");
 
-  async function tokenURI() {
+  async function bid() {
     if (typeof window.ethereum !== "undefined") {
       setStatus("Waiting for confirmation...");
 
@@ -179,7 +179,7 @@ function Auction() {
                   onChange={priceFunction}
                 />
               </Form.Group>
-              <Button className="my-2" variant="primary" onClick={tokenURI}>
+              <Button className="my-2" variant="primary" onClick={bid}>
                 Bid Now
               </Button>
               <p className="text-center">{status}</p>
@@ -191,4 +191,4 @@ function Auction() {
   );
 }
 
-export default Auction;
+export default Bidding;

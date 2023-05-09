@@ -14,7 +14,7 @@ import Buynft from "./Pages/Service/Buynft";
 import CLA from "./Pages/Service/CLA";
 import FinalizeAuction from "./Pages/Service/FinalizeAuction";
 import Listnft from "./Pages/Service/Listnft";
-import Transection from "./Pages/Transection/Transection";
+import Transaction from "./Pages/Transaction/Transection";
 // import Login from "./Pages/Login/Login";
 import Footer from "./components/Footer"
 
@@ -35,7 +35,7 @@ function App() {
         <Route path="/cla" element={<CLA></CLA>} ></Route>
         <Route path="/finalauction" element={<FinalizeAuction></FinalizeAuction>} ></Route>
         <Route path="/listnft" element={<Listnft></Listnft>} ></Route>
-        <Route path="/transection" element={<Transection></Transection>} ></Route>
+        <Route path="/transaction" element={<Transaction></Transaction>} ></Route>
         {/* <Route path="/login" element={<Login></Login>} ></Route> */}
         
 
